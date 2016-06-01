@@ -1,4 +1,0 @@
-Language: Deutsch
-Locale: de_DE
-Windows-locale: deu
-Author: 

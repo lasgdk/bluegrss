@@ -1,4 +1,0 @@
-Language: Dutch
-Locale: nl
-Windows-locale: nl
-Author: https://launchpad.net/gregarius/trunk/+pots/gregarius/nl

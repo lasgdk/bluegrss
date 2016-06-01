@@ -1,4 +1,0 @@
-Language: Portugu&ecirc;s
-Locale: pt_PT
-Windows-locale: pt
-Author: humaneasy at gmail dot com 

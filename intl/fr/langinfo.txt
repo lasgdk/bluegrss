@@ -1,4 +1,0 @@
-Language: Fran&ccedil;ais
-Locale: fr_FR
-Windows-locale: fra
-Author: mbonetti at gmail dot com

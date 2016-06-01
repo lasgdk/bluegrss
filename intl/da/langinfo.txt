@@ -1,4 +1,0 @@
-Language: Danish
-Locale: dk_DK
-Windows-locale: dan
-Author: 

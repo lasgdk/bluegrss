@@ -1,5 +1,0 @@
-Language: Arabic
-Locale: ar
-Windows-locale: ar
-Author: https://launchpad.net/~blafrancia
-

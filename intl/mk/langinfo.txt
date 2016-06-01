@@ -1,4 +1,0 @@
-Language: Macedonian
-Locale: mk
-Windows-locale: mk
-Author: Goran Andreev - https://launchpad.net/people/goranvelesmk

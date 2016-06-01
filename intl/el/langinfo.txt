@@ -1,5 +1,0 @@
-Language: Greek
-Locale: el
-Windows-locale: el
-Author: https://launchpad.net/gregarius/trunk/+pots/gregarius/el
-
