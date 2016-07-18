@@ -132,19 +132,20 @@ function getThemeMedia() {
     if (isset($_GET['rss'])) {
         $media = 'rss';
     }
-    elseif (isset($_SESSION['mobile']) || isset($_REQUEST['mobile']) || isMobileDevice()) {
-        $media = 'mobile';
-    }
+
+   // elseif (isset($_SESSION['mobile']) || isset($_REQUEST['mobile']) || isMobileDevice()) {
+   //     $media = 'mobile';
+ //   }
 
     // This is here so that auto-detected (e.g. mobile) medias
     // can be overridden.
-    if (isset($_REQUEST['media'])) {
-        $media = sanitize($_REQUEST['media'], RSS_SANITIZER_WORDS);
-    }
+ //   if (isset($_REQUEST['media'])) {
+ //       $media = sanitize($_REQUEST['media'], RSS_SANITIZER_WORDS);
+ //   }
 
     // Finally: let plugins voice their opinion
-    $media = rss_plugin_hook('rss.plugins.thememedia',$media);
-
+//    $media = rss_plugin_hook('rss.plugins.thememedia',$media);
+//
     return $media;
 }
 
@@ -152,8 +153,8 @@ function getThemeMedia() {
  * Dumb dunciton to detect mobile devices based on the passed user-agent.
  * This definitely needs some heavy tweaking.
  */
-function isMobileDevice() {
-    static $ret;
+//function isMobileDevice() {
+/*    static $ret;
     if ($ret !== NULL) {
         return $ret;
     } else {
@@ -188,7 +189,8 @@ function isMobileDevice() {
 
         return $ret;
     }
-}
+*/
+//}
 
 function rss_theme_option_ref_obj_from_theme($theme=null, $media=null) {
     if ($theme===null) {

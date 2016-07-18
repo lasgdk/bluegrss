@@ -69,22 +69,19 @@ else {
 <li class="<?php echo rss_item_css_class(); ?>" id="item_<?php echo rss_item_id(); ?>">
 	<?php if(rss_item_permalink()) { ?>
 	<a class="plink" title="<?php echo rss_item_pl_title(); ?>" href="<?php echo rss_item_pl_url(); ?>">
-		<img src="<?php echo rss_theme_path(); ?>/media/mark_off.gif" alt="<?php echo rss_item_pl_title(); ?>" />
 	</a>
 	<?php } ?>
 	<?php if(!hidePrivate()) { ?>
 	<a id="sa<?php echo rss_item_id(); ?>" href="#" onclick="_es(<?php echo rss_item_id(); ?>,<?php echo rss_item_flags(); ?>,<?php echo rss_item_cid(); ?>); return false;">
-		<img src="<?php echo rss_theme_path(); ?>/media/edit.gif" alt="edit" />
 	</a>
 	<?php } ?>
 	<?php rss_plugin_hook("rss.plugins.items.beforetitle", rss_item_id()); ?>
 	<?php if (getConfig('rss.output.showfavicons')) { 
-		$tmpIcon = rss_feed_favicon_url();	
+		//$tmpIcon = rss_feed_favicon_url();	
 		if(!$tmpIcon) {
 			$tmpIcon = rss_theme_path() ."/media/noicon.png";
 		}
 	?>
-        <img src="<?php echo $tmpIcon; ?>" class="favicon" alt="" />
 	<?php } ?>
 	<?php echo rss_item_date_with_format("G:i"); ?>
 	<h4><a class="tlink" href="#" onclick="toggleItemByID(<?php echo rss_item_id();?>);return false;">

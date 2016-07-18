@@ -1,3 +1,4 @@
+
 function toggleItemByID(id) {
  var fld=document.getElementById("c" + id);
  if (fld.style.display == "none") {
@@ -32,9 +33,9 @@ function _lilina_toggleAlldivs() {
 function _lilina_channels_collapse(o) {
 	var items = o.parentNode.parentNode;
 	if (items && document.sidecollapsed) {
-		document.getElementById('channels').style.display="block";
-		document.getElementById('sidemenu').style.display="block";
-		items.style.marginLeft="290px";
+		document.getElementById('channels').style.display="none";
+		document.getElementById('sidemenu').style.display="none";
+		items.style.marginLeft="0px";
 		document.sidecollapsed = false;
 		o.innerHTML = '&nbsp;&laquo;&nbsp;';
 		setCookie("_lilinaSidebarCollapser", "uncollapsed", _lilinaCookiePath);

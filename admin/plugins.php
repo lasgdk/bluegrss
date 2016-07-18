@@ -87,7 +87,7 @@ function plugins() {
     ."<div id=\"admin_plugins\">\n";
 
 
-    echo __('<p style="font-size:small">Plugins are third-party scripts that offer extended functionalities. More plugins can be downloaded at the <a style="text-decoration:underline"  href="http://plugins.gregarius.net/">Plugin Repository</a>.</p>');
+    echo __('<p style="font-size:small">Plugins are third-party scripts that offer extended functionalities.</p>');
 
     echo "<form method=\"post\" action=\"" .$_SERVER['PHP_SELF'] ."\">\n";
     echo "<p><input type=\"hidden\" name=\"".CST_ADMIN_DOMAIN."\" value=\"".CST_ADMIN_DOMAIN_PLUGINS."\" /></p>\n";

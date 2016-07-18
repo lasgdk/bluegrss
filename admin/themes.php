@@ -55,7 +55,7 @@ function themes() {
     
     echo "<h2 class=\"trigger\">".__('Themes')."</h2>\n"
     ."<div id=\"admin_themes\" >\n";
-    echo __('<p style="font-size:small">Themes are made of a set of template files which specify how your Gregarius installation looks.<br />More themes can be downloaded from the <a style="text-decoration:underline"  href="http://themes.gregarius.net/">Themes Repository</a>.</p>');
+    echo __('<p style="font-size:small">Themes are made of a set of template files.</p>');
 
 
     foreach ($themes as $entry => $theme) {
