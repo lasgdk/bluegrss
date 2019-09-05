@@ -7,6 +7,7 @@ body {
   text-align: left;
   color:  #335;
   background-color: #eee; 
+  background-image: url(./media/bg.gif);
 }
 
 a { text-decoration: none; }
@@ -19,7 +20,6 @@ body {
 h1,h2,h3 {
   font-family: "Trebuchet MS", "Gill Sans", Geneva, Arial, Helvetica, sans-serif;
   font-style: italic; 
- font-size: medium;
   letter-spacing: 0.05em;
   line-height:1.1em;
 }
@@ -111,14 +111,12 @@ div.frame {
  border: 1px solid #ccc;
 }
 
-/*
 div#nav {
    background-image: url(./media/arrows.gif); 
    background-color: #fff;
    background-position: top right;
    background-repeat: no-repeat; 
 }
-*/
 
 div#footer span { 
  border-right: 1px solid;  
