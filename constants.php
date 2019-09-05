@@ -26,16 +26,16 @@
 ###############################################################################
 
 // Application title
-define ('_TITLE_', "Bluegrss");
+define ('_TITLE_', "Gregarius");
 
 
 // Application version
-define ('_VERSION_', "0.1");
+define ('_VERSION_', "0.6.1");
 define ('MINUTE',60);
 
 define ('COOKIE_LIFESPAN',60*60*24*999);
 // The useragent used when retrieving the feeds
-define ('MAGPIE_USER_AGENT', "" . _TITLE_ . "/" . _VERSION_ . " (+https://github.com/lasgdk/bluegrss)");
+define ('MAGPIE_USER_AGENT', "" . _TITLE_ . "/" . _VERSION_ . " (+http://devlog.gregarius.net/docs/ua)");
 @ini_set('user_agent',MAGPIE_USER_AGENT);
 	
 // feedback
@@ -55,7 +55,7 @@ function my_assert_handler($file, $line, $code) {
 
 // Admin cookie name
 // Deprecated: define('PRIVATE_COOKIE', 'prv');
-define('RSS_USER_COOKIE', 'BluegrssUser');
+define('RSS_USER_COOKIE', 'gregariusUser');
 
 define ('RSS_USER_LEVEL_NOLEVEL',0);
 define ('RSS_USER_LEVEL_BASIC',1);

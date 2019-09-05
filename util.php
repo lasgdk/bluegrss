@@ -508,7 +508,6 @@ function add_channel($url, $folderid = 0, $title_=null,$descr_=null,$tags = null
 
         //lets see if this server has a favicon
         $icon = "";
-/*
         if (getConfig('rss.output.showfavicons')) {
             // if we got nothing so far, lets try to fall back to
             // favicons
@@ -522,7 +521,6 @@ function add_channel($url, $folderid = 0, $title_=null,$descr_=null,$tags = null
                 }
             }
         }
-*/
 
         $private = preg_match('|(https?://)([^:]+:[^@]+@)(.+)$|',$url);
 
