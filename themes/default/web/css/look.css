@@ -1,12 +1,8 @@
-/**
- * Sections of this stylesheet are Copyright (c) Ryan McCue, http://getlilina.org/
- * Released under GPL
- */
-
 body {
   text-align: left;
   color:  #335;
   background-color: #eee; 
+  background-image: url(./media/bg.gif);
 }
 
 a { text-decoration: none; }
@@ -19,7 +15,6 @@ body {
 h1,h2,h3 {
   font-family: "Trebuchet MS", "Gill Sans", Geneva, Arial, Helvetica, sans-serif;
   font-style: italic; 
- font-size: medium;
   letter-spacing: 0.05em;
   line-height:1.1em;
 }
@@ -56,7 +51,6 @@ input.tagedit { font-weight: normal; font-size: smaller;}
 label, div#channel_admin span, p.bookmarklet {
  font-size:small;
 }
-
 ul { 
  list-style-type:none; 
 }
@@ -64,7 +58,7 @@ ul {
 div#errors ul { list-style-type:square !important;  }
 div#errors { padding: 1em 2em; }
 
-table#configtable li, content.ul {
+table#configtable li, .content ul {
    list-style-type:circle; 
 }
 
@@ -106,19 +100,17 @@ div#channels li:hover, div#channels li.folder ul li:hover,div#channels li.active
 div#channels li.folder:hover { background-color: transparent}
 
 /** the main divs (nav, side, content, footer, ...) inherit this class */
-div.frame {
+.frame {
  background-color: #fff;
  border: 1px solid #ccc;
 }
 
-/*
 div#nav {
    background-image: url(./media/arrows.gif); 
    background-color: #fff;
    background-position: top right;
    background-repeat: no-repeat; 
 }
-*/
 
 div#footer span { 
  border-right: 1px solid;  
@@ -134,7 +126,8 @@ h1 {
 li.item.even, tr.even,div#alltags { background-color: #f9f9f9; }
 li.item.odd, tr.odd { background-color: #f4f4f4; }
 tr.active td { font-weight:900; background-color:#f8f8ff; }
-
+tr.hilite td { font-weight:900; background-color:#f0fff0; }
+.themeframe.hilite span,.themeframe.hilite:hover span { background-color:#f0fff0; }
 
 h3.collapsed {
  border: 1px solid #ddd;
@@ -170,13 +163,14 @@ img { border: none }
 
 
 .item:hover .content a, .item:hover h5 a { border-bottom: 1px solid #ccc; }
+.item:hover .content table a { border:none; }
 
 th { 
  background-color: #f4f4f4; 
  font-weight: bold; 
 }
 
-table#plugintable,table#channeltable,table#foldertable,table#updatetable,table#configtable,.content table {
+table#plugintable,table#channeltable,table#foldertable,table#updatetable,table#configtable,table#tagtable,.content table {
  border: 1px solid #ddd;
  font-size: small;
 }
@@ -184,6 +178,15 @@ table#plugintable,table#channeltable,table#foldertable,table#updatetable,table#c
 
 
 table tr:hover td { background-color: #f8f8ff }
+table caption {
+  text-align: left;
+  font-family: "Trebuchet MS", "Gill Sans", Geneva, Arial, Helvetica, sans-serif;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  line-height:1.1em;
+  font-size: medium;
+  font-weight: bold;
+}
   
 form.markread p, form.markallread { text-align:right; }
 
@@ -226,7 +229,7 @@ ul.navlist {
  list-style-type: none;
 }
 
-ul.navlist li,a.bookmarklet {
+ul.navlist li, .bookmarklet {
  border: 1px solid #ddd;
  background-color: #f4f4f4;
 }
@@ -288,6 +291,8 @@ fieldset {
   text-align: center; 
   border:1px solid #ddd;                                                                                             
 }
+fieldset p { text-align: left;}
+
 fieldset.prune p{ text-align:left }
 .cntr { text-align:center !important}
 
@@ -307,6 +312,7 @@ div.content img {
  padding: 0.4em; 
  margin: 0.8em 0; 
  border: 1px solid #ddd;
+ max-width:99%;
 }
 
 div#pbholder {
@@ -368,16 +374,78 @@ span.vr { border-left:2px solid #ccc;margin: 0 1em; }
 	filter: alpha(opacity=70);
 }
 
-/* for the lilina theme */
 
-.dateheader {
-	margin: 0px 0px 0px 0px;
-	padding: 4px 0 4px 15px;
-	border-top: 1px solid #00005c ;
-	font-size: medium;
-	font-weight: bold;
-	color: #fff;
-	background: #CBDFEB;
+
+#admin_login input{
+	height: 1.2em;
+	font-size: 1.3em;
+	padding: 0.2em;
 }
-.dateheader a { color: #777; } 
+
+#admin_login_submit {
+	display:block !important;
+	width:100% !important;
+	text-align:center !important;
+}
+
+#admin_login_submit p { padding: 0 auto; display:block; }
+#admin_login_submit input { height: auto; }
+
+
+
+/* admin/themes */
+/* thoroughly inspired by WP2.0's theme management */
+
+.themeframe {
+	width: 29%;
+	margin: 0 1em;
+	float: left;
+	height: 20em;
+	overflow: hidden;
+	padding: 0.2em 0;
+	text-align:left;
+}
+
+.themeframe h5 a.update { color: #447; font-weight: 900 !important; }
+
+.themeframe .bookmarklet {
+	float:right;
+	padding: 0 0.2em;
+	display:block;
+}
+
+.themeframe span {
+	background-color: #f9f9f9; 
+	padding: 1em 1em 0 1em; 
+	display:block;
+	border: 1px solid #f7f7f7;	
+	height: 100%;
+	} 
+
+	
+.themeframe span:hover, .themeframe.active span { 
+ border-color: #dde;
+ background-color: #f8f8ff;
+ }
+ 
+.themeframe h4 { border:none; padding:0; clear:right }
+
+.themeframe p { text-align: justify; font-size: small; padding: 0 0.4em; margin: 0 }
+
+.themeframe p.themescreenshot {
+	width: 230px;
+	height: 120px;
+	display: block;
+	margin: auto;
+	background: #f1f1f1;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+
+
+.themeframe img {
+	width: 100%;
+}
 

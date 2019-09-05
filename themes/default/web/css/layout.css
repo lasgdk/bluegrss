@@ -1,7 +1,3 @@
-/**
- * Sections of this stylesheet are Copyright (c) Ryan McCue, http://getlilina.org/
- * Released under GPL
- */
 html, body, td, p, th, a  { padding: 0; }
 
 body {
@@ -41,7 +37,7 @@ input {
 }
 
 
-div#channels,ul#sidemenu {
+div#channels, ul#sidemenu, ul.sidemenu {
  clear:left;
  width: 280px;
  float: left;
@@ -51,9 +47,14 @@ div#channels,ul#sidemenu {
  voice-family:inherit;
  width:250px;
 }
-ul#sidemenu { margin: 0 0 0 0.3em; }
+#admin_channels ul.sidemenu {
+	width:100%;
+}
 
-#sidemenu li { 
+
+ul#sidemenu,ul.sidemenu { margin: 0 0 0 0.3em; }
+
+#sidemenu li,.sidemenu li { 
  position: relative;
  display: inline; 
  float:left;
@@ -68,8 +69,8 @@ ul#sidemenu { margin: 0 0 0 0.3em; }
  letter-spacing: 0.1em;
 }
 
-#sidemenu li a { color: #aaa; }
-#sidemenu li.active a,#sidemenu li a:hover  { color: black }
+#sidemenu li a,.sidemenu li { color: #aaa; }
+#sidemenu li.active a,#sidemenu li a:hover,.sidemenu li.active a,.sidemenu li a:hover  { color: black }
 
 div#channels div { margin:0; padding:1em 0 0 0;}
 
@@ -149,13 +150,13 @@ h3.collapsed {
 }
 
 li.item {
- padding:  0px;
- margin: 0 0 0px 0;
+ padding:  5px;
+ margin: 0 0 10px 0;
 }
 
 div#items ul{
  padding:0;
- margin:0 0 0 0;
+ margin:0 0 30px 0;
 }
 
 h3.collapsed {
@@ -163,7 +164,7 @@ h3.collapsed {
 }
 
 div#items li { 
- padding: 4px 0px;
+ padding: 10px 15px;
  clear:right;
 }
 
@@ -188,11 +189,7 @@ div#items li.upnav a {
  padding: 0 10px;
 }
 
-div.content {
-	margin-top: 1em; 
-	padding: 0 1em;
-	width: auto;
-	}
+div.content {margin-top: 1em; }
 
 /* images inside posts */
 div.content img { display: block; }
@@ -217,15 +214,49 @@ table#channeltable,table#foldertable,table#updatetable,table#configtable {
  width: 99.2%;
 }
 
+table#configtable caption{
+ margin: 0 0 -18px 0;
+}
+
 table#foldertable { width: auto }
 
 td>input[type="text"] { width: 100%; }
 
-form#channeledit input { display:block; }
+fieldset#channeleditfs {
+	display:block;
+	width:100%;
+	padding: 1em;
+	text-align:left;
+	width: 45%; 
+	float: left;
+}
+
+fieldset#channeleditpropfs {
+	text-align:left;
+	float:left;
+	display:block;
+	width: 47%;
+	font-size:small;
+}
+
+form#channeledit p{
+	margin: 0 0 0.7em 0;
+}
+
+p#rss_input_allowupdates_options input {
+	display:inline !important;
+}
+
+p#rss_input_allowupdates_options label {
+	display:inline !important;
+	margin-right: 1em;
+}
+
+form#channeledit input, table#tagtable label { display:block; }
 
 form#channeledit input[type="text"] {
   display:block;
-  width: 50%;
+  width: 100% !important;
 }
 
 div.feedaction {
@@ -249,6 +280,17 @@ div.feedaction.withmargin {
  margin-bottom: 0.8em;
 }
 
+div.feedaction.withmargin form {
+ display: inline;
+}
+
+div.feedaction.withmargin form p {
+ display: inline;
+}
+
+div.feedaction.withmargin #frmShow {
+ display: block;
+}
 
 form#frmShow { margin-bottom: 0.4em !important; }
 
@@ -263,7 +305,6 @@ p.error {
 div.readmore {
  display: block;
  height: 1em;
- margin-top:1em;
 }
 
 
@@ -288,6 +329,12 @@ ul.navlist li {
  height: 1.3em;
  margin: 2px 2px 0 5px;
  padding: 0.05em 0.2em;
+}
+
+div#channels_admin_menu {
+	margin:0; padding: 0.5em;
+	display:block;
+	clear:left;
 }
 
 /* doubling because IE chokes on the submit selector */
@@ -378,28 +425,27 @@ div#alltags {
  float:left;
 }
 
-
 #db_main .item { padding: 1em; }
-#db_main h4,#db_side h4  { border: none !important; margin-left: 0; padding-left:0 }
-#db_side {
+#db_main h4, .db_side h4  { border: none !important; margin-left: 0; padding-left:0 }
+
+div.db_side {
  width: 24%;
- margin: 0 1em 0 73%;
- padding: 0 1em;
+ margin: 0 1em 10px 73%;
+ padding: 1em;
  border-color: #eef;
  background-color: #f8f8ff;
- 
 }
 
 
-#db_side h3 { border:none; padding: 0; margin: 0.5em 0}
-#db_side ul { list-style-type: square; margin: 0 0 2em 0 }
-#db_side li {
+.db_side h3 { border:none; padding: 0; margin: 0}
+.db_side ul { list-style-type: square; margin: 0 0 2em 0 }
+.db_side li {
 	margin: 1em 0 1em 1em;
 	padding: 0 0.2em;
 	color: #ccc; 
 }
-#db_side li h5 a {
+.db_side li h5 a {
 	color: #666 !important; 
 }
-#db_side li h5 a:hover { color: #333 !important }
+.db_side li h5 a:hover { color: #333 !important }
 
