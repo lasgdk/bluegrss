@@ -29,9 +29,13 @@ define ('RSS_SQL_ERROR_NO_ERROR',0x01);
 define ('RSS_SQL_ERROR_DUPLICATE_ROW',0x02);
 
 class DB {
-	function DB() {
+	function __construct() {
 		$this -> DBConnect(DBSERVER,DBUNAME,DBPASS);
 		$this -> DBSelectDB(DBNAME);
+	}
+
+	function DB() {
+		$this -> __construct();
 	}
 	
 	function getTable($tableName) {
