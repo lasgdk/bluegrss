@@ -27,20 +27,22 @@
 
 function rss_home_dir() {
     if (!defined('GREGARIUS_HOME')) {
-        define('GREGARIUS_HOME',dirname(__FILE__) . "/");
+        define('GREGARIUS_HOME', dirname(__FILE__) . "/");
     }
 
     return GREGARIUS_HOME;
 }
 
-function rss_require($file,$once=true) {
-    $required_file = dirname(__FILE__) . '/'. $file;
+function rss_require($file, $once = true) {
+    $required_file = dirname(__FILE__) . '/' . $file;
     if ($once) {
         require_once($required_file);
     } else {
         require($required_file);
     }
 }
+
+rss_require('compat.php');
 
 ////////////////////////////////////////////////////////////////////////////////
 // my-hacks support
@@ -116,19 +118,18 @@ $lang = $GLOBALS['rssl10n']->getLocale();
 _pf('done');
 
 // Theme  specific l10n handling
-list($theme,$media) = getActualTheme();
+list($theme, $media) = getActualTheme();
 
-if (file_exists(RSS_THEME_DIR."/$theme/intl/$lang.php")) {
-    rss_require(RSS_THEME_DIR."/$theme/intl/$lang.php");
-}
-elseif ($lang != "en" && file_exists(RSS_THEME_DIR."/$theme/intl/en.php")) {
-    rss_require(RSS_THEME_DIR."/$theme/intl/en.php");
+if (file_exists(RSS_THEME_DIR . "/$theme/intl/$lang.php")) {
+    rss_require(RSS_THEME_DIR . "/$theme/intl/$lang.php");
+} elseif ($lang != "en" && file_exists(RSS_THEME_DIR . "/$theme/intl/en.php")) {
+    rss_require(RSS_THEME_DIR . "/$theme/intl/en.php");
 }
 
 
 //
-if (file_exists(getThemePath(GREGARIUS_HOME)."overrides.php")) {
-	rss_require(getThemePath('')."overrides.php");
+if (file_exists(getThemePath(GREGARIUS_HOME) . "overrides.php")) {
+    rss_require(getThemePath('') . "overrides.php");
 }
 
 /*
