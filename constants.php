@@ -41,7 +41,9 @@ define ('MAGPIE_USER_AGENT', "" . _TITLE_ . "/" . _VERSION_ . " (+http://devlog.
 // feedback
 assert_options(ASSERT_ACTIVE, 1);
 assert_options(ASSERT_WARNING, 1);
-assert_options(ASSERT_QUIET_EVAL, 0);
+if (defined('ASSERT_QUIET_EVAL')) {
+    assert_options(ASSERT_QUIET_EVAL, 0);
+}
 
 
 // default output encoding, can be overrided in the config.
