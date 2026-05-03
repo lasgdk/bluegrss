@@ -55,7 +55,7 @@ global $hasWritePerm;
 function install_main() {
     $hasXML    = function_exists('xml_parser_create');
     $hasMySQL  = function_exists('mysql_connect');
-    $hasSQLite = function_exists('sqlite_open');
+    $hasSQLite = class_exists('SQLite3') || function_exists('sqlite_open');
     $hasSocket = function_exists('fsockopen');
 
 //    $hasSQLite = true;
@@ -276,10 +276,19 @@ if(file_exists(DBINIT)) {
                     mysql_close($sql);
                 }
             } else if("sqlite" == $_POST['type']) {
-                $sql = @sqlite_open($_POST['server'], 0666);
+                if (class_exists('SQLite3')) {
+                    try {
+                        $sql = new SQLite3($_POST['server']);
+                        $sql->close();
+                    } catch (Exception $e) {
+                        print("Unable to connect to database! Please create manually.");
+                    }
+                } else {
+                    $sql = @sqlite_open($_POST['server'], 0666);
 
-                if(!$sql) {
-                    print("Unable to connect to database! Please create manually.");
+                    if(!$sql) {
+                        print("Unable to connect to database! Please create manually.");
+                    }
                 }
             } else {
                 print("Invalid SQL Type!");
